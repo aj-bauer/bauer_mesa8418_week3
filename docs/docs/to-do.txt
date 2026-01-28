@@ -1,0 +1,18 @@
+# TO-DO List 
+
+Here are a list of possible next steps to perform using this data and project:
+
+* Find a method to visualize total population as well as the percent of the population
+  below the poverty line for each neighborhood; one method might be to use hue or 
+  intensity of color to represent total population; another might be to plot the
+  total number of individuals below the poverty line by neighborhood, with hue
+  representing the percent total.
+* Create a visualization to represent the distribution of levels of education (as
+  percent/fraction of the total pop) by neighborhood. This might work well as a 
+  stacked bar chart.
+* Create a visualization showing the distribution of age groups within the sub-
+  population of people below the poverty line within each neighborhood. This might
+  also work well as a stacked bar chart.
+* Find historical data to observe the change in percent of the population below
+ the poverty line over the past 5-10 years, again by neighborhood, this time
+ as a line graph.

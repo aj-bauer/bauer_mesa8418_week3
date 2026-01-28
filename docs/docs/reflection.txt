@@ -1,0 +1,49 @@
+# REFLECTION
+
+This is a reflection on the experience I had while creating and working
+with this repository/project. I opted to do (part of) the advanced
+project track, which entailed using AWS S3 rather than Google Cloud
+Storage.
+
+## AWS S3
+
+Surprisingly, setting up the AWS S3 bucket was not especially onerous.
+I've used AWS S3 before a little bit at work, where we used a somewhat
+complicated workflow using Terraform to link Bitbucket, AWS Lambda, and 
+an S3 bucket, which I didn't understand very well at the time, but it
+did allow me some familiarity with AWS to get set up with a simple bucket,
+and knowledge on setting up the .config and .credentials file. Once those
+were set up, it was pretty seamless to integrate with the CCDS workflow,
+with the caveat below about "make".
+
+## CCDS and make
+
+Installing and initializing the repository, and pushing to GitHub, were
+pretty straightforward processes. However, I quickly ran into a problem
+in that I work on a Windows computer, which does not have "make" pre-
+installed. I had the further misfortune of realizing that I would need 
+admin priviledges to install an installer such as chocolatey that I would
+need to install make.
+
+The solution I ended up using, which may or may not have been the most 
+straightforward, was to install Windows Subsystem for Linux, which does 
+come with make. At first, I tried pulling a new copy of my repo from 
+GitHub to my Linux subsystem, but I subsequently realized that it would
+be simpler to access my original Windows-side repo from the WSL command
+line and run all make statements from that side.
+
+## Data Cleaning & Plot-making
+
+Once the make command worked, it was pretty simple to import, manipulate,
+and export data. I had to do some trial and error to get the vega-altair
+library installed correctly (to be able to export as a png file), but 
+thanks to the internet I finally found which dependencies I needed to 
+install separately.
+
+The resulting plot was generated using /bauer_mesa8418_week3/plots.py.
+I was able to adapt the Makefile to indlude in the environment the 
+command "make plots", which runs plots.py (taking the processed data
+from /data/processed). The resulting plot is available under the 
+/reports/figures folder.
+
+A small to-do list is also available in the docs folder.
