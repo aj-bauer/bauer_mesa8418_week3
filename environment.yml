@@ -1,0 +1,24 @@
+name: bauer_mesa8418_week3
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - typer
+  - loguru
+  - tqdm
+  - ipython
+  - jupyterlab
+  - matplotlib
+  - notebook
+  - numpy
+  - pandas
+  - scikit-learn
+  - black
+  - flake8
+  - isort
+  - pip:
+    - python-dotenv
+    - awscli
+    - mkdocs
+    - -e .
