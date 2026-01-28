@@ -3,6 +3,7 @@ from pathlib import Path
 from loguru import logger
 from tqdm import tqdm
 import typer
+import pandas as pd
 
 from bauer_mesa8418_week3.config import PROCESSED_DATA_DIR, RAW_DATA_DIR
 
@@ -16,11 +17,20 @@ def main(
     output_path: Path = PROCESSED_DATA_DIR / "dataset.csv",
     # ----------------------------------------------
 ):
-    # ---- REPLACE THIS WITH YOUR OWN CODE ----
     logger.info("Processing dataset...")
-    for i in tqdm(range(10), total=10):
-        if i == 5:
-            logger.info("Something happened for iteration 5.")
+
+    # Read data
+    df = pd.read_csv(input_path)
+
+    # Drop shape_wlt column, which contains no data
+    df = df.drop(columns="shape_wkt")
+
+    # Drop harbor islands, which is missing data as well
+    df = df[df["name"] != "Harbor Islands"]
+
+    # Write data to output path  
+    df.to_csv("dataset_clean.csv", index=False)
+    
     logger.success("Processing dataset complete.")
     # -----------------------------------------
 
