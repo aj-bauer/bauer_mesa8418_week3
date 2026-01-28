@@ -77,6 +77,10 @@ create_environment:
 data: requirements
 	$(PYTHON_INTERPRETER) bauer_mesa8418_week3/dataset.py
 
+## Make dataset
+.PHONY: plots
+plots: requirements
+	$(PYTHON_INTERPRETER) bauer_mesa8418_week3/plots.py
 
 #################################################################################
 # Self Documenting Commands                                                     #

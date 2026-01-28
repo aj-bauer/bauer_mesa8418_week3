@@ -22,3 +22,6 @@ dependencies:
     - awscli
     - mkdocs
     - -e .
+    - altair[all]
+    - altair_saver
+    - vl-convert-python
