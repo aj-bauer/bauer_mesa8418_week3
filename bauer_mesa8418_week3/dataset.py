@@ -5,7 +5,7 @@ from tqdm import tqdm
 import typer
 import pandas as pd
 
-from bauer_mesa8418_week3.config import PROCESSED_DATA_DIR, RAW_DATA_DIR
+from config import PROCESSED_DATA_DIR, RAW_DATA_DIR
 
 app = typer.Typer()
 
@@ -29,7 +29,7 @@ def main(
     df = df[df["name"] != "Harbor Islands"]
 
     # Write data to output path  
-    df.to_csv("dataset_clean.csv", index=False)
+    df.to_csv(output_path, index=False)
     
     logger.success("Processing dataset complete.")
     # -----------------------------------------
